@@ -92,6 +92,7 @@ plot(MST,vertex.shape="circle",layout = layout.kamada.kawai,vertex.color="white"
 
 
 #n-gram creation for building language profiles (this is built in the textcat package)
+h=hash()
 	for (i in 1:length(docs)){
 		r=textcnt(content(docs[[i]])[1:trainsize], method="ngram",n=5L, split = "[[:space:][:punct:][:digit:]]+",decreasing=TRUE,size=300)
 		lang=meta(docs[[i]])$language		
